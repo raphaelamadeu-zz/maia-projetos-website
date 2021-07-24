@@ -14,6 +14,7 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.5)
     ),
     url(${props.backgroundImage});
+    ${props.parallax && `background-attachment: fixed;`}
   `
       : ``}
   background-position: center;
@@ -75,9 +76,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Section = ({ dark, border, backgroundImage, children }) => {
+const Section = ({ dark, border, backgroundImage, parallax, children }) => {
   return (
-    <Container backgroundImage={backgroundImage}>
+    <Container parallax={parallax} backgroundImage={backgroundImage}>
       <Wrapper dark={dark}>{children}</Wrapper>
     </Container>
   );

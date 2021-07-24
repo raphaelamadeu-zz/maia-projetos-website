@@ -16,7 +16,7 @@ const Logo = styled.img`
 const Heading = styled.h1`
   text-align: center;
   font-family: "Montserrat-Regular";
-  font-size: 2.5rem;
+  font-size: 2rem;
 `;
 
 const Header = ({ logo, heading, button, social }) => (

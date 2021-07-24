@@ -8,6 +8,7 @@ const Home = () => (
     <GlobalStyle />
     <MainContainer>
       <Section
+        parallax
         dark
         backgroundImage="https://revista.buildings.com.br/wp-content/uploads/2018/12/sean-pollock-203658-unsplash-1200x650.jpg"
       >
