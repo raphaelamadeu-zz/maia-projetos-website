@@ -1,8 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
-  height: calc(100vh - 4rem);
-  width: calc(100vw - 4rem);
+  height: calc(100vh - 2rem);
+  width: calc(100vw - 2rem);
+  min-height: fit-content;
   scroll-snap-align: start;
   position: relative;
 
@@ -20,6 +21,7 @@ const Container = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 500px;
 `;
 
 const borderAnimation = keyframes`
@@ -43,11 +45,11 @@ const borderAnimation = keyframes`
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 2rem;
-  left: 2rem;
-  bottom: 2rem;
-  right: 2rem;
-  color: ${(props) => (props.dark ? "#fff" : "#000")};
+  top: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  color: ${(props) => (props.dark ? "#fff" : "#333")};
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -59,8 +61,8 @@ const Wrapper = styled.div`
     top: 0;
     left: 0;
     position: absolute;
-    border-top: 2px solid ${(props) => (props.dark ? "#fff" : "#000")};
-    border-right: 2px solid ${(props) => (props.dark ? "#fff" : "#000")};
+    border-top: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
+    border-right: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
     animation: ${borderAnimation} 2s forwards ease;
   }
 
@@ -70,8 +72,8 @@ const Wrapper = styled.div`
     right: 0;
     bottom: 0;
     position: absolute;
-    border-bottom: 2px solid ${(props) => (props.dark ? "#fff" : "#000")};
-    border-left: 2px solid ${(props) => (props.dark ? "#fff" : "#000")};
+    border-bottom: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
+    border-left: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
     animation: ${borderAnimation} 2s 2s forwards ease;
   }
 `;

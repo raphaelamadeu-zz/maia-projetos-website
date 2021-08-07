@@ -2,6 +2,11 @@ import GlobalStyle from "../components/global-style";
 import Header from "../components/header";
 import MainContainer from "../components/main-container";
 import Section from "../components/section";
+import SocialButtons from "../components/social-buttons";
+import FlexContainer from "../components/flex/container";
+import Half from "../components/flex/half";
+import AnchorButton from "../components/anchor-button";
+import PerspectiveImage from "../components/perspective-image";
 
 const Home = () => (
   <div>
@@ -18,10 +23,33 @@ const Home = () => (
             alt: "Maia Projetos",
           }}
           heading="Lorem ipsum dolor"
+          button={{
+            copy: "Saiba mais",
+            href: "#section-2",
+          }}
         />
+        <SocialButtons />
       </Section>
-      <Section>
-        <h1>Hey Hank!</h1>
+      <Section id="section-2">
+        <FlexContainer>
+          <Half>
+            <PerspectiveImage src="https://br.sonychannel.com/sites/br.set/files/ct_character_f_primary_image/himym06_josh_yellow_1438_r1.jpg" />
+          </Half>
+          <Half>
+            <h2>Sobre nós</h2>
+            <p>
+              Ainda assim, existem dúvidas a respeito de como a mobilidade dos
+              capitais internacionais garante a contribuição de um grupo
+              importante na determinação do sistema de participação geral.
+            </p>
+            <p>
+              É claro que o início da atividade geral de formação de atitudes
+              cumpre um papel essencial na formulação de alternativas às
+              soluções ortodoxas.
+            </p>
+            <AnchorButton href="#">Nosso portfólio</AnchorButton>
+          </Half>
+        </FlexContainer>
       </Section>
       <Section>
         <h1>Hey Chris!</h1>
