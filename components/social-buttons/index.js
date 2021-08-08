@@ -69,22 +69,22 @@ const Button = styled.a`
 const icons = [
   {
     icon: faWhatsapp,
-    href: "",
+    href: "#1",
   },
   {
     icon: faFacebookF,
-    href: "",
+    href: "#2",
   },
   {
     icon: faInstagram,
-    href: "",
+    href: "#3",
   },
 ];
 
 const SocialButtons = () => (
   <Container>
     {icons.map((elem) => (
-      <Button>
+      <Button key={elem.href}>
         <FontAwesomeIcon icon={elem.icon} />
       </Button>
     ))}

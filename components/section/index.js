@@ -57,7 +57,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  ${(props) => props.blurred && "backdrop-filter: blur(5px)  brightness(-0.2);"}
+  ${(props) => props.blurred && "backdrop-filter: blur(5px)  brightness(0.8);"}
 
   &:before {
     content: "";
@@ -67,7 +67,7 @@ const Wrapper = styled.div`
     position: absolute;
     border-top: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
     border-right: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
-    animation: ${borderAnimation} 2s forwards ease;
+    animation: ${(props) => !props.noBorder && borderAnimation} 2s forwards ease;
   }
 
   &:after {
@@ -78,18 +78,26 @@ const Wrapper = styled.div`
     position: absolute;
     border-bottom: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
     border-left: 2px solid ${(props) => (props.dark ? "#fff" : "#333")};
-    animation: ${borderAnimation} 2s 2s forwards ease;
+    animation: ${(props) => !props.noBorder && borderAnimation} 2s 2s forwards
+      ease;
   }
 `;
 
-const Section = ({ dark, blurred, backgroundImage, parallax, children }) => {
+const Section = ({
+  dark,
+  blurred,
+  backgroundImage,
+  parallax,
+  children,
+  noBorder,
+}) => {
   return (
     <Container
       dark={dark}
       parallax={parallax}
       backgroundImage={backgroundImage}
     >
-      <Wrapper blurred={blurred} dark={dark}>
+      <Wrapper noBorder={noBorder} blurred={blurred} dark={dark}>
         {children}
       </Wrapper>
     </Container>
