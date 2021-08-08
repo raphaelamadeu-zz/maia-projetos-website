@@ -24,6 +24,7 @@ const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px;
+  transition: all 0.5s ease;
 `;
 
 const borderAnimation = keyframes`

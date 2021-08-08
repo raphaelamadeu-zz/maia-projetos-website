@@ -82,6 +82,7 @@ const Home = ({ portfolio }) => {
             <Portfolio
               data={portfolio}
               onSelect={setActivePortfolioBg}
+              modalActive={isModalActive}
               setModalActive={setIsModalActive}
             />
           </Column>

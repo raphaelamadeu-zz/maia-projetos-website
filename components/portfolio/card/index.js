@@ -58,7 +58,7 @@ const Card = ({ entry, onClick, onHover }) => {
   const [image] = images;
 
   return (
-    <Container>
+    <Container onClick={() => onClick()} onMouseOver={() => onHover()}>
       <Image src={image.src} alt={name} />
       <Content className="content">
         <span>{name}</span>
