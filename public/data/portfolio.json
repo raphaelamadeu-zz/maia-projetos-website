@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Entry no.1",
+    "description": "Dolore aute elit ullamco nisi ullamco nostrud officia qui. Amet dolor qui sint nulla esse dolore laborum est cillum. Tempor nostrud dolore reprehenderit velit aliquip elit esse elit pariatur incididunt incididunt elit.",
+    "images": [
+      {
+        "src": "https://lorempixel.com/800/600/city/1",
+        "description": ""
+      },
+      {
+        "src": "https://lorempixel.com/800/600/city/2",
+        "description": ""
+      },
+      {
+        "src": "https://lorempixel.com/800/600/city/3",
+        "description": ""
+      }
+    ]
+  }
+]

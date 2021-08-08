@@ -7,6 +7,8 @@ const Container = styled.div`
   scroll-snap-align: start;
   position: relative;
 
+  ${(props) => props.dark && "background-color: #333;"}
+
   ${(props) =>
     props.backgroundImage
       ? `
@@ -55,6 +57,8 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
+  ${(props) => props.blurred && "backdrop-filter: blur(5px)  brightness(-0.2);"}
+
   &:before {
     content: "";
     opacity: 0;
@@ -78,10 +82,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const Section = ({ dark, border, backgroundImage, parallax, children }) => {
+const Section = ({ dark, blurred, backgroundImage, parallax, children }) => {
   return (
-    <Container parallax={parallax} backgroundImage={backgroundImage}>
-      <Wrapper dark={dark}>{children}</Wrapper>
+    <Container
+      dark={dark}
+      parallax={parallax}
+      backgroundImage={backgroundImage}
+    >
+      <Wrapper blurred={blurred} dark={dark}>
+        {children}
+      </Wrapper>
     </Container>
   );
 };

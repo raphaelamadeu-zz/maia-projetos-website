@@ -8,8 +8,9 @@ import Half from "../components/flex/half";
 import AnchorButton from "../components/anchor-button";
 import PerspectiveImage from "../components/perspective-image";
 
-const Home = () => (
+const Home = ({ ...props }) => (
   <div>
+    {console.log(props)}
     <GlobalStyle />
     <MainContainer>
       <Section
@@ -51,11 +52,22 @@ const Home = () => (
           </Half>
         </FlexContainer>
       </Section>
-      <Section>
-        <h1>Hey Chris!</h1>
+      <Section blurred dark>
+        <h2>Portfólio</h2>
       </Section>
     </MainContainer>
   </div>
 );
+
+Home.getInitialProps = async function () {
+  const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
+  const data = await res.json();
+
+  console.log(`Show data fetched. Count: ${data.length}`);
+
+  return {
+    shows: data.map((entry) => entry.show),
+  };
+};
 
 export default Home;
