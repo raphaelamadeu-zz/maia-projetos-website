@@ -42,6 +42,10 @@ const Container = styled.div`
   left: 25%;
   width: 50%;
   position: relative;
+  @media screen and (max-width: 900px) {
+    bottom: 15%;
+    position: absolute;
+  }
   background: #333;
   transition: all 1.5s ease;
   transform: rotate(-20deg) skew(20deg);

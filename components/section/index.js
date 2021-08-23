@@ -1,9 +1,15 @@
 import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
-  height: calc(100vh - 2rem);
+  @media screen and (max-width: 900px) {
+    min-height: calc(100vh - 2rem);
+    height: 100%;
+  }
+  @media screen and (min-width: 901px) {
+    height: calc(100vh - 2rem);
+    min-height: fit-content;
+  }
   width: calc(100vw - 2rem);
-  min-height: fit-content;
   scroll-snap-align: start;
   position: relative;
 
@@ -12,6 +18,13 @@ const Container = styled.div`
   ${(props) =>
     props.backgroundImage
       ? `
+      @media screen and (max-width: 900px) {
+        background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(${props.backgroundImage});
+      }
     background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(0, 0, 0, 0.5)

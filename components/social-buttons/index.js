@@ -12,6 +12,9 @@ const Container = styled.div`
   bottom: 1rem;
   right: 1rem;
   display: flex;
+  @media screen and (max-width: 900px) {
+    flex-direction: row;
+  }
   flex-direction: column;
   z-index: 1;
 `;
@@ -23,6 +26,7 @@ const Button = styled.a`
   background: #fff;
   border: 2px solid #333;
   margin-top: 1rem;
+  margin-left: 0.5rem;
   transition: all 0.25s ease;
   color: #333;
   position: relative;

@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin-bottom: 1rem;
     font-size: 1.25rem;
+
+    @media screen and (max-width: 900px) {
+      font-size: 1rem;
+    }
   }
 
   body {

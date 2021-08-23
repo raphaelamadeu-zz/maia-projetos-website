@@ -13,6 +13,9 @@ const Container = styled.div`
 `;
 
 const Logo = styled.img`
+  @media screen and (max-width: 900px) {
+    width: 70%;
+  }
   width: 300px;
   filter: invert(1);
   mix-blend-mode: lighten;
@@ -21,6 +24,9 @@ const Logo = styled.img`
 const Heading = styled.h1`
   text-align: center;
   font-family: "Montserrat-Regular";
+  @media screen and (max-width: 900px) {
+    font-size: 1.5rem;
+  }
   font-size: 2rem;
   margin-bottom: 2rem;
 `;

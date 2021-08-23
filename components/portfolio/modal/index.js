@@ -99,14 +99,18 @@ const Modal = ({ isActive, data, setIsActive }) => {
       {isActive && (
         <>
           <ReturnButton
-            style={{ animationDirection: isReverse ? "reverse" : "forwards" }}
+            style={{
+              animationDirection: isReverse ? "reverse" : "forwards",
+            }}
             onClick={closeModal}
           >
             <FontAwesomeIcon icon={faArrowLeft} />
           </ReturnButton>
           <Container isReverse={isReverse}>
             <Content
-              style={{ animationDirection: isReverse ? "reverse" : "forwards" }}
+              style={{
+                animationDirection: isReverse ? "reverse" : "forwards",
+              }}
             >
               <h2>{data.name}</h2>
               <p>{data.description}</p>

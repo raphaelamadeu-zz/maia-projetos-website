@@ -30,9 +30,6 @@ const AElement = styled.a`
     z-index: -1;
     transition: all 0.25s ease;
     transform: translate(0, 100%);
-    background: red;
-
-    background: #333;
 
     ${(props) =>
       props.dark &&

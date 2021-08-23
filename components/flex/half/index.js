@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 const Half = styled.div`
-  flex: 0 0 50%;
+  @media screen and (min-width: 901px) {
+    flex: 0 0 50%;
+    min-height: 400px;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
