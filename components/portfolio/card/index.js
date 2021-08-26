@@ -22,11 +22,10 @@ const Container = styled.button`
     props.inverse
       ? `
         clip-path: polygon(0 0, 100% 0, 50% 100%);
-        transform: translateX(calc(-25%));
       `
       : `
         clip-path: polygon(0 100%, 100% 100%, 50% 0);
-        transform: translateY(-100%) translateX(calc(25% + .5rem));
+        transform: translateY(-100%) translateX(calc(50% + .5rem));
       `}
 `;
 

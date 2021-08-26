@@ -37,7 +37,6 @@ const Container = styled.div`
     forwards;
   z-index: 1;
   grid-column-gap: 1rem;
-  transform: translateX(-0.5rem);
 `;
 
 const Portfolio = ({ onSelect, data, setModalActive, modalActive }) => {
