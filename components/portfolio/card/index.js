@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.button`
-  height: 350px;
+  max-height: 350px;
   position: relative;
   border: none;
   overflow: hidden;
@@ -17,6 +17,17 @@ const Container = styled.button`
       bottom: 0;
     }
   }
+
+  ${(props) =>
+    props.inverse
+      ? `
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transform: translateX(calc(-25%));
+      `
+      : `
+        clip-path: polygon(0 100%, 100% 100%, 50% 0);
+        transform: translateY(-100%) translateX(calc(25% + .5rem));
+      `}
 `;
 
 const Image = styled.img`
@@ -28,7 +39,7 @@ const Image = styled.img`
 
 const Content = styled.div`
   position: absolute;
-  bottom: calc(-100% + 3rem);
+  bottom: -100%;
   height: 100%;
   width: 100%;
   padding: 1rem;
@@ -38,6 +49,12 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding-left: calc(25% + 1rem);
+  padding-right: calc(25% + 1rem);
+
+  ${(props) =>
+    props.inverse ? `padding-bottom: calc(25%);` : `padding-top: calc(25%);`}
 
   span {
     font-size: 1rem;
@@ -53,14 +70,18 @@ const Content = styled.div`
   }
 `;
 
-const Card = ({ entry, onClick, onHover }) => {
+const Card = ({ entry, onClick, onHover, inverse }) => {
   const { name, description, images } = entry;
   const [image] = images;
 
   return (
-    <Container onClick={() => onClick()} onMouseOver={() => onHover()}>
+    <Container
+      inverse={inverse}
+      onClick={() => onClick()}
+      onMouseOver={() => onHover()}
+    >
       <Image src={image.src} alt={name} />
-      <Content className="content">
+      <Content inverse={inverse} className="content">
         <span>{name}</span>
         <p>{description}</p>
         <span>Clique para ver mais</span>
